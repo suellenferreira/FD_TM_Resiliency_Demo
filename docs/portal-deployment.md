@@ -1,6 +1,6 @@
 # Manual deployment through Azure Portal
 
-This guide produces the same comparison manually. Use the Bicep and PowerShell path in the repository when repeatability is the priority. Do not add tenant IDs, subscription IDs, credentials, or other environment-specific values to this document.
+This guide produces the same comparison manually. The regions below are examples only; choose regions that meet your availability, capacity, pairing, and customer requirements. Use the Bicep and PowerShell path in the repository when repeatability is the priority. Do not add tenant IDs, subscription IDs, credentials, or other environment-specific values to this document.
 
 ## 1. Prepare the environment
 

@@ -1,6 +1,6 @@
 # Azure Front Door and Traffic Manager resiliency demo
 
-This lab compares Azure Front Door and Azure Traffic Manager for regional failover of two independent HTTP workloads: App Service and AKS. Central US is the primary region and North Central US is the disaster-recovery region.
+This lab compares Azure Front Door and Azure Traffic Manager for regional failover of two independent HTTP workloads: App Service and AKS. The primary and secondary regions are configurable; the examples in this repository use Central US and North Central US.
 
 Front Door is a Layer 7 proxy. It keeps a single `azurefd.net` endpoint while it selects a healthy origin. Traffic Manager is DNS-based. It returns a healthy priority endpoint, but failover observed by a client also depends on DNS TTL and cache behavior.
 
@@ -39,7 +39,7 @@ Copy `config/demo.env.example` to `config/demo.env` and set the values for your 
 Copy-Item config/demo.env.example config/demo.env
 ```
 
-For the requested demo layout, set the locations to `centralus` and `northcentralus`. Use a short, globally unique `DEMO_PREFIX`; it becomes part of public Front Door, Traffic Manager, Web App, AKS, and DNS-label names.
+For example, `AZURE_LOCATION_PRIMARY=centralus` and `AZURE_LOCATION_SECONDARY=northcentralus` represent the primary and secondary regions. Replace these values in `config/demo.env` with regions that meet your availability, capacity, pairing, and customer requirements. Use a short, lowercase, globally unique `DEMO_PREFIX`; it becomes part of public Front Door, Traffic Manager, Web App, AKS, and DNS-label names.
 
 Before publishing a fork or pull request, run the local pre-publication check:
 
