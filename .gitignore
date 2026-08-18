@@ -1,0 +1,18 @@
+# Local Azure configuration and generated endpoints
+config/*.env
+!config/demo.env.example
+outputs/
+
+# Local tooling and generated artifacts
+infra/*.json
+*.user
+.azure/
+.vscode/settings.json
+
+# Secrets and private keys if created locally
+*.pem
+*.key
+*.pfx
+*.publishsettings
+*.secret
+secrets/
